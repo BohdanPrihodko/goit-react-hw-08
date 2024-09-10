@@ -2,7 +2,7 @@ import { IoPersonCircleSharp } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import styles from "./Contact.module.css";
 
-const Contact = ({ id, name, number, onDeleteContact }) => {
+const Contact = ({ name, number, onDeleteContact }) => {
   return (
     <li className={styles.contact}>
       <div className={styles.contactInfo}>
@@ -13,7 +13,7 @@ const Contact = ({ id, name, number, onDeleteContact }) => {
         <FaPhoneAlt className={styles.icon} />
         <span>{number}</span>
       </div>
-      <button className={styles.button} onClick={() => onDeleteContact(id)}>
+      <button className={styles.button} onClick={onDeleteContact}>
         Delete
       </button>
     </li>
