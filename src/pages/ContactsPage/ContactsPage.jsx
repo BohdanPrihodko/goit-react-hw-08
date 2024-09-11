@@ -7,6 +7,11 @@ import {
   selectError,
 } from "../../redux/contacts/selectors";
 
+
+import ContactForm from "../../components/ContactForm/ContactForm";
+import ContactList from "../../components/ContactList/ContactList";
+import SearchBox from "../../components/SearchBox/SearchBox";
+
 const ContactsPage = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
@@ -19,16 +24,12 @@ const ContactsPage = () => {
 
   return (
     <div>
-      <h1>Contacts</h1>
+      <h1>Phonebook</h1>
+      <ContactForm />
+      <SearchBox />
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {contacts && (
-        <ul>
-          {contacts.map((contact) => (
-            <li key={contact.id}>{contact.name}</li>
-          ))}
-        </ul>
-      )}
+      <ContactList contacts={contacts} />
     </div>
   );
 };
