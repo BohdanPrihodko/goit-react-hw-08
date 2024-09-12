@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav>
-      <ul>
+    <nav className="navigation">
+      <ul className="navlist">
         <li>
           <NavLink
             to="/"

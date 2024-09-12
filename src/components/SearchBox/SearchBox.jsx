@@ -13,7 +13,7 @@ const SearchBox = () => {
 
   return (
     <div className={styles.searchBox}>
-      <label htmlFor="search">Find contacts by name</label>
+      <label className="labelSearch" htmlFor="search">Find contacts by name</label>
       <input id="search" type="text" value={filter} onChange={handleChange} />
     </div>
   );

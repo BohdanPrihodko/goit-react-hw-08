@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import styles from "./Contact.module.css";
+import { Button } from "@mui/material";
 
 const Contact = ({ name, number, onDeleteContact, onEditContact }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -35,9 +36,9 @@ const Contact = ({ name, number, onDeleteContact, onEditContact }) => {
               onChange={(e) => setEditedNumber(e.target.value)}
             />
           </div>
-          <button className={styles.button} onClick={handleEdit}>
+          <Button className={styles.button} onClick={handleEdit}>
             Save
-          </button>
+          </Button>
         </>
       ) : (
         <>
@@ -49,20 +50,21 @@ const Contact = ({ name, number, onDeleteContact, onEditContact }) => {
             <FaPhoneAlt className={styles.icon} />
             <span>{number}</span>
           </div>
-          <button
+          <Button
             className={styles.button}
             onClick={() => setIsEditing(true)}
             type="button"
           >
             Edit
-          </button>
-          <button
+          </Button>
+          <Button
             className={styles.button}
             onClick={onDeleteContact}
-            type="button"
+              type="button"
+              color="white"
           >
             Delete
-          </button>
+          </Button>
         </>
       )}
     </li>

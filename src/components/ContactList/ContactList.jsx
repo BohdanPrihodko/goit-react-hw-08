@@ -6,6 +6,8 @@ import Contact from "../Contact/Contact.jsx";
 import DeleteModal from "../DeleteModal/DeleteModal";
 import { toast } from "react-hot-toast";
 import styles from "./ContactList.module.css";
+import EditContactForm from "../EditContactForm/EditContactForm";
+
 
 const ContactList = () => {
   const contacts = useSelector(selectVisibleContacts);
@@ -36,6 +38,18 @@ const ContactList = () => {
       .catch(() => toast.error("Failed to update contact"));
   };
 
+  {
+      contactToEdit && (
+        <EditContactForm
+          contact={contactToEdit}
+          onSave={(updatedData) =>
+            handleEditContact(contactToEdit.id, updatedData)
+          }
+          onCancel={() => setContactToEdit(null)}
+        />
+      );
+  }
+  
   return (
     <div>
       <ul className={styles.contactList}>

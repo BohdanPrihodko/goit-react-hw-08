@@ -16,11 +16,15 @@ const LoginForm = ({ onSubmit }) => {
       onSubmit={onSubmit}
     >
       <Form>
-        <label htmlFor="email">Email</label>
+        <label className="labelLogin" htmlFor="email">
+          Email
+        </label>
         <Field name="email" type="email" />
         <ErrorMessage name="email" />
 
-        <label htmlFor="password">Password</label>
+        <label className="labelLogin" htmlFor="password">
+          Password
+        </label>
         <Field name="password" type="password" />
         <ErrorMessage name="password" />
 

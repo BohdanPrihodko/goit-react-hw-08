@@ -16,9 +16,9 @@ const DeleteModal = ({ onConfirm, onCancel }) => {
   }, [onCancel]);
 
   return (
-    <Modal isOpen={true} onRequestClose={onCancel}>
-      <h2>Confirmation</h2>
-      <p>Are you sure you want to delete this contact?</p>
+    <Modal isOpen={true} onRequestClose={onCancel} color="black">
+      <h2 className="modalTitle">Confirmation</h2>
+      <p className="modalQuest">Are you sure you want to delete this contact?</p>
       <button onClick={onConfirm}>Yes, delete</button>
       <button onClick={onCancel}>Cancel</button>
     </Modal>
